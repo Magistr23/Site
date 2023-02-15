@@ -1,0 +1,13 @@
+{foreach from=$messages_list item=$message}
+<center>
+{if $message['err']}
+<div class="alert alert-dismissible alert-danger text-center">
+    <strong>Ошибка!</strong> {$message['text']}
+</div>
+{else}
+<div class="alert alert-dismissible alert-success text-center">
+    <strong>Успешно!</strong> {$message['text']}
+</div>
+{/if}
+</center>
+{/foreach}

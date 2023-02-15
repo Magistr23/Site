@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170112238-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-170112238-1');
+</script>
+    <link rel="shortcut icon" href="/styles/img/favicon/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+
+    <title>MagicDays - Покупка доната на сервере Майнкрафт | Пожертвования</title>
+
+    <link rel="stylesheet" href="{$theme_url}css/style.css?v=2">
+
+    <script>theme_url = '{$theme_url}';</script>
+</script>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="head">
+            <a href="/" class="logo"><img src="{$theme_url}img/logo.svg" alt="logo"></a>
+            <nav class="pc">
+                <ul>
+                    <li><a href="/?page=rules">Правила</a></li>
+                    <li><a href="//vk.com/mdays_off" target="_blank" rel="nofollow">Мы ВКонтакте</a></li>
+                    <li><a href="/console/">Консоль</a></li>
+                    <li><a href="//mdays.su/discord" rel="nofollow" target="_blank">Наш Discord</a></li>
+                </ul>
+            </nav>
+            <div class="online">
+                <span class="players"><span id="online">-</span> игроков онлайн</span>
+                <button class="copy clipboard" data-clipboard-text="{$cfg.server.ip}">
+                    <img src="{$theme_url}img/copy.svg" alt="">
+                    <span style="text-transform: uppercase;">{$cfg.server.ip}</span>
+                </button>
+            </div>
+            <button class="mobile open">
+                <img src="{$theme_url}img/open-button_mobile.svg" alt="">
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile">
+    <button class="mobile close">
+        <img src="{$theme_url}img/close-button_mobile.svg" alt="">
+    </button>
+    <ul>
+        <li><a href="/?page=rules">Правила</a></li>
+        <li><a href="//vk.com/mdays_off" target="_blank" rel="nofollow">Мы ВКонтакте</a></li>
+        <li><a href="/console/">Консоль</a></li>
+        <li><a href="//mdays.su/hosting" target="_blank">Наш хостинг</a></li>
+        <li><a href="//mdays.su/discord" target="_blank">Discord канал</a></li>
+    </ul>
+    <button class="copy">
+        <img src="{$theme_url}img/copy.svg" alt="">
+        <span style="text-transform: uppercase;">{$cfg.server.ip}</span>
+    </button>
+    <span class="players"><span id="online-mobile">-</span> игроков онлайн</span>
+</nav>
+
+
+<!-- JQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+<script src="{$theme_url}js/script.js?7"></script>
+
+{include file="pages/$page.html"}
+
+
+<footer>
+    <div class="container">
+        <div class="info">
+            <a href="/"><img class="logo" src="{$theme_url}img/logo.svg" alt="logo"></a>
+            <ul>
+                <li><a href="/?page=rules">Соглашение</a></li>
+                <li><a href="/?page=police">Условия возврата</a></li>
+                <li><a href="//mdays.su/hosting" target="_blank">Наш хостинг</a></li>
+                <li><a href="//vk.me/mdays_off" target="_blank" rel="nofollow">Задать вопрос</a></li>
+            </ul>
+            <a href="//mdays.su" class="made" rel="nofollow" target="_self">Сделано с <span class="blue">Любовью <3</span></a>
+        </div>
+        <div class="description">
+            <p class="rights">2016-2021 © MagicDays | MDays.su не связан с MojangAB. Все средства идут на развитие проекта.</p>
+            <a href="//mdays.su" class="made" rel="nofollow" target="_self">Сделано с <span class="blue">Любовью <3</span></a>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* TEST START */
+body {
+  background: #101113;
+  font-family: 'Open Sans', sans-serif;
+  color: white; }
+
+.purchases_block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 570px;
+  margin: 0 auto;
+  margin-top: 18px;
+  padding: 0 22px;
+  padding-right: 32px; }
+
+h3 {
+  text-align: center; }
+
+.btn:hover {
+  background: url(../img/arr_right.png) 95% center no-repeat, linear-gradient(to right, #ff8f00, #ff3000); }
+
+.btn {
+  font-family: 'ProximaNova_black', 'Arial', sans-serif;
+  font-size: 13px;
+  color: #fff;
+  padding: 11px 43px;
+  padding-bottom: 10px;
+  padding-right: 55px;
+  padding-left: 23px;
+  background: url(../img/arr_right.png) 93% center no-repeat, linear-gradient(to right, #ff3000, #ff8f00);
+  border: none;
+  border-radius: 3px;
+  margin-top: 3px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 106, 0, 0.25);
+  outline: none; }
+
+/* TEST END */

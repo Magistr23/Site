@@ -1,0 +1,6 @@
+{
+    "require": {
+      "ext-json": "*",
+      "xpaw/php-minecraft-query": "^4.0"
+    }
+}

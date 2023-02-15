@@ -1,0 +1,94 @@
+.commentsBlock {
+  text-align: center;
+  padding-top: 30px; }
+  .commentsBlock .purchases_block {
+    flex-direction: column; }
+  .commentsBlock h3 {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    margin-bottom: 20px; }
+  .commentsBlock .carousel {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 14px;
+    line-height: 1.52;
+    color: #ffffff; }
+    .commentsBlock .carousel .user {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      margin-bottom: 20px; }
+      .commentsBlock .carousel .user .img {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: solid 1px #ffffff;
+        overflow: hidden;
+        text-align: center;
+        margin-right: 10px; }
+      .commentsBlock .carousel .user .name {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.52; }
+      .commentsBlock .carousel .user .buy {
+        font-size: 12px;
+        line-height: 1.52;
+        color: rgba(255, 255, 255, 0.5); }
+        .commentsBlock .carousel .user .buy span {
+          font-weight: 600;
+          color: #fe8c2a; }
+    .commentsBlock .carousel .carousel-item {
+      min-height: 133px; }
+      @media (max-width: 600px) {
+        .commentsBlock .carousel .carousel-item {
+          min-height: 175px; } }
+    .commentsBlock .carousel .carousel-control-prev, .commentsBlock .carousel .carousel-control-next {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: solid 1px rgba(255, 255, 255, 0.25); }
+      .commentsBlock .carousel .carousel-control-prev img, .commentsBlock .carousel .carousel-control-next img {
+        height: 15px; }
+    .commentsBlock .carousel .carousel-control-next img {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg); }
+  .commentsBlock .btn {
+    padding-left: 39px;
+    padding-right: 39px;
+    background: linear-gradient(to right, #ff3000, #ff8f00); }
+    .commentsBlock .btn:hover {
+      background: linear-gradient(to right, #ff8f00, #ff3000); }
+
+.listServers {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  border-radius: 5px;
+  width: 300px; }
+  .listServers .srv {
+    cursor: pointer;
+    padding: 12.5px 20px;
+    background: rgba(0, 0, 0, 0.25);
+    flex-shrink: 2;
+    box-sizing: border-box;
+    width: 46%;
+    width: calc(50% - 10px);
+    border-radius: 5px;
+    margin: 5px; }
+    .listServers .srv.active {
+      background: #ff8f00 linear-gradient(to right, #ff8f00, #ff3000); }
+  @media (max-width: 600px) {
+    .listServers {
+      flex-direction: column; }
+      .listServers .srv {
+        width: 100%; }
+        .listServers .srv:first-child {
+          border-radius: 5px 5px 0 0; }
+        .listServers .srv:last-child {
+          border-radius: 0 0 5px 5px; } }

@@ -1,0 +1,101 @@
+<div class="privilege_wrapper">
+    <div class="inner">
+        <h2>Приобрести привилегию</h2>
+        {include file="messages.html"}
+        {if $groups|count > 1}
+        <div class="listServers">
+            {foreach from=$groups item=$list key=$id name=groups}
+            <div class="srv {if $smarty.foreach.groups.first}active{/if}" data-i="{$id}">{$list.name}</div>
+            {/foreach}
+        </div>
+        {/if}
+        <div class="forms">
+            {foreach from=$groups item=$list key=$id name=groups}
+            <form method="post" data-i="{$id}" class="phpmc {if $smarty.foreach.groups.first}active{/if}">
+                <label class="nickname">
+                    <input type="text" name="nick" class="nick" placeholder="Введите ник" required>
+                </label>
+                <label class="select">
+                    <select class="group" name="group" placeholder="Выберите привилегию" required>
+                        <option selected disabled>Выберите товар</option>
+                        {foreach from=$list.groups item=$list key=$category}
+                        <optgroup label="{$category}">
+                            {foreach from=$list item=$group}
+                            <option value="{$group->id}">{$group->name} - {$group->price} руб.</option>
+                            {/foreach}
+                        </optgroup>
+                        {/foreach}
+                    </select>
+                </label>
+                <label class="promo">
+                    <input type="text" name="promo" class="promocode" placeholder="Купон (если есть)">
+                </label>
+                <button type="submit" name="buy" class="btn buy">
+                    Перейти к оплате
+                </button>
+            </form>
+            {/foreach}
+        </div>
+    </div>
+    <div class="info">
+        <b>Также у нас работает система <span class="color">доплаты</span>.</b>
+        <p>Т.е. если у вас уже есть аккаунт с привилегией, вы можете свободно докупить привилегию получше, не
+            переплачивая при этом.</p>
+    </div>
+</div>
+
+<div class="last_purchases_wrapper">
+    <h3>ПОСЛЕДНИЕ ПОКУПКИ</h3>
+    <div class="purchases_block" id="donaters">
+    </div>
+</div>
+
+<div class="commentsBlock">
+    <h3>ИГРОКИ О СЕРВЕРЕ</h3>
+    <div class="purchases_block">
+        <div id="carouselComments" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                {foreach from=$cfg['commentsBlock'] item=$comment name=comments}
+                <div class="carousel-item {if $smarty.foreach.comments.first}active{/if}">
+                    <div class="user">
+                        <div class="img"><img src="{$comment.image}"></div>
+                        <div>
+                            <div class="name">{$comment.name}</div>
+                            <div class="buy">Покупал <span>{$comment.buy}</span></div>
+                        </div>
+                    </div>
+                    <div>{$comment.comment}</div>
+                </div>
+                {/foreach}
+            </div>
+            <a class="carousel-control-prev" href="#carouselComments" data-slide="prev"><img
+                    src="/styles/img/arrow.svg"></a>
+            <a class="carousel-control-next" href="#carouselComments" data-slide="next"><img
+                    src="/styles/img/arrow.svg"></a>
+        </div>
+        <a href="https://vk.com/topic-167500386_38250788?offset=0" target="_blank">
+            <button class="btn">Больше отзывов</button>
+        </a>
+    </div>
+</div>
+<style>
+    .forms form:not(.active){
+        display: none;
+    }
+</style>
+<script>
+    var servers = document.querySelectorAll('.listServers .srv');
+    servers.forEach(function(srv){
+        srv.addEventListener('click',function () {
+            var active = document.querySelector('.listServers .srv.active');
+            if(active) active.classList.remove('active');
+            srv.classList.add('active');
+
+            var i = srv.dataset.i;
+            var mainActive = document.querySelector(".forms form.active");
+            if(mainActive) mainActive.classList.remove('active');
+            var main = document.querySelector('.forms form[data-i="'+i+'"]');
+            if(main) main.classList.add('active');
+        });
+    });
+</script>

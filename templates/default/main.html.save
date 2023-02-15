@@ -1,0 +1,188 @@
+<!--
+   ███████████████████████████████████████████
+   █────██───█─█─█───█─███────█────█───█────██
+   █─██──█─███─█─█─███─███─██─█─██─█─███─██──█
+   █─██──█───█─█─█───█─███─██─█────█───█─██──█
+   █─██──█─███───█─███─███─██─█─████─███─██──█
+   █────██───██─██───█───█────█─████───█────██
+   ███████████████████████████████████████████
+   ██████████
+   █───█─██─█
+   ██─██──█─█
+   ██─██─█──█
+   ██─██─██─█
+   █───█─██─█
+   ██████████
+   ██████████████████████████████████████
+   █────█─██─█────█─███─█────███────█─█─█
+   █─██─█─██─█─██─█──█──█─██─███─██─█─█─█
+   █────█────█────█─█─█─█─██████────█─█─█
+   █─████─██─█─████─███─█─██─███─█─██─█─█
+   █─████─██─█─████─███─█────█─█─█─██───█
+   ██████████████████████████████████████
+   --->
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>MagicDays - Донат</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="description" content="MagicDays | Лучший сервер MineCraft 1.8-1.13 в своем роде!">
+    <meta name="keywords" content="MagicDays, magicdays, mdays.su, автодонат, bedwars, 1.13, выживание, survival, mc.mdays.su, миниигры, gta 5, roleplay, гта, админка, бесплатная админка, кейсы, пвп, pvp, кланы, свадьбы, спавн, spawn, прокачка, магия, работы, сервер майнкрафт 1.8, сервер майнкрафт 1.12, 1.8, 1.12, кроватные войны, minecraft, майнкрафт, сервер, сервер майнкрафт, сервер MineCraft, наркотики, кальян, автодонат magicdays, автодонат MagicDays, mc.mdays.su, mdays.su, купить автодонат на magicdays, автодонат, server minecraft">
+    <link rel="shortcut icon" href="/styles/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/styles/img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/styles/img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/styles/img/favicon/apple-touch-icon-114x114.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/css/normalize.css">
+    <link rel="stylesheet" href="/styles/css/fonts.css">
+    <link rel="stylesheet" href="/styles/css/mainNew.css">
+    <link rel="stylesheet" href="/styles/css/main.css">
+    <link rel="stylesheet" href="/styles/css/media.css">
+    <link rel="stylesheet" href="/styles/css/formstyler.css">
+	<link rel="stylesheet" href="styles/css/donates.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body {if $page == "index"}class="index"{/if}>
+<header>
+    <div class="main_head">
+        <div class="container">
+            <nav class="main_nav">
+                <ul>
+                    <li {if $page == "index"}class="active color"{/if}>
+                    <a href="/" title="Магазин" class="shop">
+                        Магазин
+                    </a>
+                    </li>
+                    <li {if $page == "rules"}class="active color"{/if}>
+                    <a href="/?page=rules" title="Правила" class="features">
+                        Правила
+                    </a>
+                    </li>
+                    <li>
+                        <a href="//vk.me/mdays_off" title="Контакты" target="_blank" class="contacts">
+                            Контакты
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/console/" title="Консоль" class="features">
+                            Консоль
+                        </a>
+                    </li>
+                    <li>
+                        <li {if $page == "donates"}class="active color"{/if}>
+                            Описание доната
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="bot_header">
+            <div class="online">
+                <p>ИГРОКОВ ОНЛАЙН</p>
+                <b class="color"><font id="online"></font> / <font id="slots"></font></b>
+            </div>
+            <div class="title">
+                <h2><span class="color">Magic</span>Days</h2>
+            </div>
+            <div class="server_ip">
+                <p>IP Сервера</p>
+                <b class="color">mc.mdays.su</b>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container block{{ucfirst($page)}}">
+        {include file="pages/$page.html"}
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="copyright">
+            <b>2016-2019 © MagicDays</b>
+            <p>MDays.su не связан с MojangAB.
+                <br> Все средства идут на развитие проекта.</p>
+        </div>
+        <nav class="footer_navigation">
+            <ul>
+                <li>
+                    <p></p>
+                    <a href="https://mdays.su/?page=rules">Соглашение</a>
+                </li>
+                <li>
+                    <p></p>
+                    <a href="https://mdays.su/?page=rules">Условия возврата</a>
+                </li>
+                <li>
+                    <p></p>
+                    <a href="https://vk.com/mdays_off" target="_blank">Сообщество ВК</a>
+                </li>
+                <li>
+                    <p>Проблема?</p>
+                    <a href="https://vk.com/im?media=&sel=-167500386" target="_blank">Задать вопрос</a>
+                </li>
+                <li>
+                    <p>Сделано в</p>
+                    <a href="https://phpmc.ru/" target="_blank">PHPMC</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+<script src="/styles/libs/jquery/jquery-3.3.1.min.js"></script>
+<script src="/styles/libs/jquery/jquery.formstyler.min.js"></script>
+<script src="/styles/libs/util.js"></script>
+<script src="/styles/libs/carousel.js"></script>
+<script type="text/javascript">
+    $('select').styler();
+    var timer_key;
+    $('.phpmc').on('keydown change', function() {
+        var form = this;
+        clearTimeout(timer_key);
+        timer_key = setTimeout(function() {
+            $.get('/engine/ajax.php', {
+                type: 'view',
+                promo: $(form).find('.promocode').val(),
+                nick: $(form).find('.nick').val(),
+                group: $(form).find('.group option:selected').val()
+            }, function(data) {
+                var info = data.split('|');
+                $(form).find('.buy').text(info[1]);
+            });
+        }, 50);
+    });
+    $.post('/engine/ajax.php?type=stat/online', {}, function(data) {
+        $('#online').html(data);
+    });
+    $.post('/engine/ajax.php?type=stat/slots', {}, function(data) {
+        $('#slots').html(data);
+    });
+    $.post('/engine/ajax.php?type=donaters', {}, function(data) {
+        $('#donaters').html(data);
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+</body>
+
+</html>

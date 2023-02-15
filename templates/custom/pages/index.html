@@ -1,0 +1,213 @@
+<main>
+    <!-- SLIDER START -->
+    <section class="slider" id="banner">
+        <div class="container">
+            <div class="slider_cover">
+                <div class="slider">
+                    <div class="banner blue active">
+                        <div class="content">
+                            <h2>Ограниченная скидка</h2>
+                            <h3>Президент всего за 999 ₽ <span class="vanish">4 995 ₽</span></h3>
+                            <div class="buy">
+                                <button class="modal-open" data-by="slider" data-id="804">Купить</button>
+                                <span>Акция ограничена</span>
+                            </div>
+                            <div class="discount">
+                                <img src="{$theme_url}img/start_discount.svg" alt="">
+                                <span>-80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner purple">
+                        <div class="content">
+                            <h2>Временная скидка</h2>
+                            <h3>НЕZЕРИТ всего за 399 ₽ <span class="vanish">1 596 ₽</span></h3>
+                            <div class="buy">
+                                <button class="modal-open" data-by="slider" data-id="31">Купить</button>
+                                <span>Акция ограничена</span>
+                            </div>
+                            <div class="discount">
+                                <img src="{$theme_url}img/start_discount.svg" alt="">
+                                <span>-80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner blue">
+                        <div class="content">
+                            <h2>Сеозонная скидка</h2>
+                            <h3>VALHALLA ПЛЮС всего за 999 ₽ <span class="vanish">4 995 ₽</span></h3>
+                            <div class="buy">
+                                <button class="modal-open" data-by="slider" data-id="989">Купить</button>
+                                <span>Акция ограничена</span>
+                            </div>
+                            <div class="discount">
+                                <img src="{$theme_url}img/start_discount.svg" alt="">
+                                <span>-80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner purple">
+                        <div class="content">
+                            <h2>Летняя скидка</h2>
+                            <h3>МОДЕРАТОР всего за 3 299 ₽ <span class="vanish">16 495 ₽</span></h3>
+                            <div class="buy">
+                                <button class="modal-open" data-by="slider" data-id="801">Купить</button>
+                                <span>Акция ограничена</span>
+                            </div>
+                            <div class="discount">
+                                <img src="{$theme_url}img/start_discount.svg" alt="">
+                                <span>-80%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="forward"></button>
+            </div>
+        </div>
+    </section>
+    <!-- SLIDER END -->
+
+    <section id="params">
+        <div class="container">
+            <div class="params_list">
+                <div class="point server">
+                    <h3>Выбор сервера</h3>
+                    <div class="switch">
+                        {foreach from=$groups item=$list key=$id name=servers}
+                            <button class="{if $smarty.foreach.servers.first}active{/if}">{$list.name}</button>
+                        {/foreach}
+                    </div>
+                </div>
+                <div class="point category buttons">
+                    <h3>Категории товаров</h3>
+                    {assign "i" 0}
+                    {foreach from=$groups item=$list key=$id name=servers}
+                            <div class="switch {if $smarty.foreach.servers.first}show{/if}">
+                                <div class="buttons">
+                                    {foreach from=$list.groups item=$list key=$category name=categories}
+                                    {assign "i" $i + 1}
+                                        <button data-target-category="{$i}" class="{if $smarty.foreach.categories.first}active{/if}">{$category}</button>
+                                    {/foreach}
+                                </div>
+                                <select>
+                                    {foreach from=$list.groups item=$list key=$category name=categories}
+                                        <option data-target-category="{$smarty.foreach.categories.iteration * $smarty.foreach.servers.iteration}">{$category}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                    {/foreach}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="items">
+        <div class="container">
+            {assign "i" 0}
+            {foreach from=$groups item=$list key=$id name=servers}
+                {foreach from=$list.groups item=$list key=$category name=categories}
+                    {assign "i" $i + 1}
+                    <div data-id-category="{$i}" class="items_list">
+                        {foreach from=$list item=$group}
+                            <div class="item modal-open" data-id="{$group->id}">
+                                <input type="hidden" name="id" value="{$group->id}">
+                                <input type="hidden" name="name" value="{$group->name}">
+                                <input type="hidden" name="price" value="{$group->price}">
+                                <input type="hidden" name="image" value="{$group->image}">
+                                <textarea name="text" style="display:none;">{$group->text}</textarea>
+
+                                <div class="img_block"><img src="{$group->image}" alt=""></div>
+
+                                <div class="description">
+                                    <h6 class="name">{$group->name}</h6>
+                                    <div>
+                                        <span class="cost">{$group->price} ₽</span>
+                                        <span class="duration">навсегда</span>
+                                    </div>
+                                </div>
+                            </div>
+                        {/foreach}
+                    </div>
+                {/foreach}
+            {/foreach}
+        </div>
+    </section>
+
+    <section id="live">
+        <div class="container">
+            <div class="live_block">
+                <div class="title">
+                    <h3>Сейчас покупают</h3>
+                    <div class="live">
+                        <div class="indicator"></div>
+                        <span>LIVE</span>
+                    </div>
+                </div>
+                <div class="buyer_list" id="donaters"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slider" id="comments">
+        <div class="container">
+            <div class="comments_block">
+                <div class="title">
+                    <h3>Игроки о сервере</h3>
+                    <a href="https://vk.com/topic-167500386_38250788?offset=0" rel="nofollow" target="_blank">Больше отзывов</a>
+                </div>
+                <div class="slider_block">
+                    <div class="slider_cover">
+                        <div class="slider">
+                            {foreach from=$cfg.commentsBlock item=$comment key=$key name=comments}
+                                <div class="banner {if $smarty.foreach.comments.first}active{/if}">
+                                    <div class="title">
+                                        <div class="img" style="background-image: url('{$comment.image}')"></div>
+                                        <div class="info">
+                                            <span class="name">{$comment.name}</span>
+                                            <span class="about">Покупал привилегию <span class="blue">{$comment.buy}</span></span>
+                                        </div>
+                                    </div>
+                                    <p class="comment">{$comment.comment}</p>
+                                </div>
+                            {/foreach}
+                        </div>
+                    </div>
+                    <button class="forward"><span>Следующий отзыв</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="modal">
+        <div class="block">
+            <button class="close"><img src="{$theme_url}img/close_modal.svg" alt=""></button>
+            <div class="top">
+                <h3 id="modal-title"></h3>
+                <form action="" id="modal-form">
+                    <input type="hidden" name="group" id="modal-id" value="0">
+                    <input type="text" name="nick" required placeholder="Никнейм на сервере" class="name">
+                    <select type="text" name="payment_way" required class="way" onchange="alert_for_yom()">
+                        <option selected disabled>Способ оплаты</option>
+                        {foreach from=$cfg.payments_methods item=$method key=$code}
+                            {if $method.enabled}
+                                <option value="{$code}">{$method.name}</option>
+                            {/if}
+                        {/foreach}
+                    </select>
+                    <input type="text" name="promo" placeholder="Промокод (если есть)" class="code">
+                    <button type="submit" id="modal-price">Купить за 0 ₽</button>
+                    <div id="modal-message"></div>
+                </form>
+            </div>
+            <div class="bottom" id="modal-text"></div>
+        </div>
+    </section>
+</main>
+<script>
+function alert_for_yom() {
+    if ($("select[name=payment_way]").val() == 'yoomoney_mobile') { 
+        alert('После покупки данным способом напишите в нашу группу ВК: vk.me/mdays_off');
+    }
+}
+</script>
+<script src="{$theme_url}js/index.js"></script>
